@@ -1,0 +1,351 @@
+:root{
+ --Almost-White: hsl(0, 0%, 98%);
+ --Medium-Gray: hsl(0, 0%, 41%);
+ --Almost-Black: hsl(0, 0%, 8%);
+}
+*{
+ padding: 0;
+ margin: 0;
+ box-sizing: border-box;
+}
+
+body{
+ font-family: 'Epilogue', sans-serif;
+ background-color: var(--Almost-White);
+ padding:  1em;
+
+ min-height: 100vh;
+}
+
+
+
+/* NavBar */
+
+header{
+  display: flex;
+  align-items: center;
+  position:relative;
+}
+
+nav{
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+ul {
+  list-style: none;
+}
+
+
+
+.left{
+  display: flex;
+  gap: 2em;
+  margin-left: 4em;
+}
+
+.right{
+  margin-left: auto;
+  display: flex;
+  gap:2em;
+  align-items: center;
+}
+.right p:last-child{
+  padding: .8125em 1.4375em;
+}
+
+ul li a ,.right a{
+  font-weight: 500;
+  text-decoration: none;
+  color: var(--Medium-Gray);
+  transition: color .3s ;
+}
+ul li a:hover,
+.right a:hover,
+ul li:focus,
+.right:focus {
+  color: var(--Almost-Black);
+}
+.right p:last-child {
+  border: 1.5px solid var(--Medium-Gray);
+  border-radius: 14px;
+  margin-bottom: 0;
+
+}
+.features-items,
+.company-info{
+  position: absolute;
+  background-color: var(--Almost-White);
+  padding: 1.5em;
+  margin-top: 1.25em; 
+  box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+
+  
+}
+.features-items li,
+.company-info li {
+  margin-bottom: 1em;
+}
+
+.features-items li:last-child,
+.company-info li:last-child{
+  margin-bottom: 0;
+}
+/* Mobile-nav */
+
+
+ 
+
+
+  
+
+  .menu-bar {
+    position: absolute;
+    right: -7px;
+
+    width: 25px;
+    height: 14px;
+    cursor: pointer;
+    display: none;
+    z-index: 1;
+  }
+
+  .menu-bar span {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: var(--Almost-Black);
+    transition: all .3s ease-in-out;
+
+  }
+
+  .menu-bar span:first-child {
+    top: 0;
+  }
+
+  .menu-bar span:nth-child(2) {
+    top: 6px;
+  }
+
+  .menu-bar span:last-child {
+    top: 12px;
+  }
+  .menu-bar.active span:first-child,
+  .menu-bar.active span:last-child{
+    top: 6px;
+  }
+
+  .menu-bar.active span:nth-child(2){
+    opacity: 0;
+  }
+  .menu-bar.active span:first-child{
+    transform: rotate(45deg);
+  }
+  .menu-bar.active span:last-child{
+    transform: rotate(-45deg);
+  }
+
+
+
+
+
+
+
+
+.features-items,
+.company-info{
+  display: none;
+
+}
+.features-items.active,
+.company-info.active{
+  display: block;
+   
+}
+
+/* main */
+/* desktop */
+main {
+
+ display:flex;
+ align-items: center;
+ justify-content: center;
+ gap: 2em;
+ max-width:1038px;
+ padding: 1em;
+ margin: 0 auto;
+
+}
+main div:last-child{
+ order: -1;
+}
+.hero{
+ width:100%;
+ content: url('images/image-hero-desktop.png');
+}
+
+.title {
+ font-weight: 700;
+ font-size: 5rem;
+ letter-spacing: -1.6px;
+ margin-bottom: .6em;
+ width: auto;
+}
+
+.info {
+ font-weight: 500;
+ color: var(--Medium-Gray);
+ font-size: 1.125rem;
+ line-height: 1.6;
+ margin-bottom: 2.83em;
+ width: 66%;
+}
+.learn-more {
+ background-color: var(--Almost-Black);
+ padding: .83em 1.56em;
+ color: #fff;
+ text-decoration: none;
+ border-radius: 15px;
+ display: inline-block;
+ font-size:1.125rem ;
+ font-weight: 700;
+ border: 1px solid var(--Almost-Black);
+ transition: color .3s , background-color .3s;
+}
+
+.learn-more:hover,
+.learn-more:focus{
+  background-color: var(--Almost-White);
+  color:var(--Almost-Black) ;
+  
+}
+
+.client {
+ margin-top: 3.625em;
+ display: flex;
+ align-items: center;
+ gap: 1em;
+}
+
+.client img {
+ width: 15.621%;
+}
+@media(max-width:840px){
+
+  header{
+      justify-content: space-between;
+  }
+  .menu-bar{
+    display: block;
+  }
+  
+  nav {
+    position: fixed;
+    right: -122%;
+    top: 0%;
+    transition: all 500ms ease-in-out;
+    background-color: white;
+    display: block;
+    width: auto;
+    
+    
+    padding: 2em 10em 20em 1.5em;
+  }
+
+  .left {
+    margin-top: 4em;
+    display: block;
+    margin-left: 0;
+  }
+  .left li{
+    margin-bottom: 1em;
+  }
+  .right{
+    flex-direction: column;
+    gap: 0;
+    align-items: stretch;
+  }
+
+
+
+   
+  
+  
+
+  .features-items,
+  .company-info{
+    margin-top: 1em;
+    margin-left: 1em;
+    position: relative;
+    background: none;
+    box-shadow: none;
+    padding: 0;
+  }
+  
+
+  .right{
+    text-align: center;
+    width: 240%;
+    margin-top: 5em;
+  }
+  .right p {
+    margin-bottom: 1em;
+  }
+
+  .right a {
+    font-size: .875rem;
+
+
+  }
+
+  .right p:last-child{
+      padding: .5em;
+  }
+
+
+
+
+
+
+/* main */
+  main{
+    text-align: center;
+    flex-direction: column;
+  }
+  main div:last-child{
+    order: 1;
+  }
+
+
+.hero {
+ width: 100%;
+ margin-bottom: 2.9375em;
+ content: url('images/image-hero-mobile.png');
+}
+.title{
+  font-size: 2.25rem;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.45em;
+  width: auto;
+}
+.info{
+  font-size: 1rem;
+  margin-bottom: 1.5em;
+  width: auto;
+
+}
+
+.client{
+  justify-content: center;
+}
+
+.client img{
+  width: 22%;
+}
+
+}
+
+
+
+
